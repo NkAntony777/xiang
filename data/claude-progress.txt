@@ -105,6 +105,32 @@
 ### Next
 - Task 5: Implement Nayin API (by-ganzhi, by-nayin, status, category, calculation)
 
+### Session 2026-02-13 (Task 4 - Ganzhi API Verification)
+
+### Completed
+- Verified all Ganzhi API endpoints are working correctly:
+  - GET /api/ganzhi - Returns list of 60 Ganzhi
+  - GET /api/ganzhi/search?q=... - Search by name, tiangan, or dizhi
+  - GET /api/ganzhi/names - Returns all 60 Ganzhi names
+  - GET /api/ganzhi/{ganzhi_name} - Returns detailed info with:
+    - Basic info (tiangan, dizhi, wuxing, yinyang, fangwei, jijie)
+    - Nayin (纳音五行)
+    - Xiangyi list (象意) - 10 items for 甲子
+    - Shensha list (神煞) - 6 items for 甲子
+    - Xiji list (喜忌) - 2 items for 甲子
+    - Guanxi list (干支关系) - 11 items for 甲子
+  - POST /api/ganzhi/compare - Compare 2-4 Ganzhi
+- Re-imported data to fix encoding issues
+- All data verified: 60 Ganzhi, 60 Nayin, 516 Xiangyi, 38 Shensha, 127 Xiji, 272 Guanxi
+
+### Notes
+- API working correctly
+- Database properly populated with UTF-8 encoded Chinese characters
+- Ready for next task
+
+### Next
+- Task 5: Implement Nayin API (by-ganzhi, by-nayin, status, category, calculation)
+
 ---
 
 ## Session Guidelines
