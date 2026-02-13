@@ -512,8 +512,12 @@ def main():
     # Load data files
     print("\nLoading data files...")
 
-    # Get project root
-    project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    # Get project root (go up 3 levels from app/import_data.py to reach project root)
+    # app/import_data.py -> app/ -> backend/ -> project root
+    current_file = os.path.abspath(__file__)
+    app_dir = os.path.dirname(current_file)
+    backend_dir = os.path.dirname(app_dir)
+    project_root = os.path.dirname(backend_dir)
     xiangyi_path = os.path.join(project_root, 'xiangyi.json')
     kg_path = os.path.join(project_root, 'KG_logic.json')
 
