@@ -161,9 +161,6 @@ for ($i = 1; $i -le $Count; $i++) {
             $processInfo.RedirectStandardError = $true
             $processInfo.UseShellExecute = $false
             $processInfo.CreateNoWindow = $true
-            $processInfo.StandardInputEncoding = [System.Text.Encoding]::UTF8
-            $processInfo.StandardOutputEncoding = [System.Text.Encoding]::UTF8
-            $processInfo.StandardErrorEncoding = [System.Text.Encoding]::UTF8
 
             $process = New-Object System.Diagnostics.Process
             $process.StartInfo = $processInfo
