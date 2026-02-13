@@ -17,9 +17,9 @@
     {
       "id": 3,
       "description": "Create data import script to load xiangyi.json and KG_logic.json into database",
-      "status": "pending",
+      "status": "completed",
       "created_at": "2026-02-13T00:00:00Z",
-      "completed_at": null
+      "completed_at": "2026-02-13T15:00:00Z"
     },
     {
       "id": 4,
@@ -108,7 +108,7 @@
   ],
   "metadata": {
     "total": 15,
-    "completed": 1,
-    "pending": 14
+    "completed": 3,
+    "pending": 12
   }
 }
