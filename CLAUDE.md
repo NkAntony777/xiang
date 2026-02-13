@@ -19,10 +19,14 @@ The harness uses a **two-agent pattern**:
 |------|---------|
 | `prompts/initializer.md` | System prompt for the initializer agent |
 | `prompts/coding.md` | System prompt for coding agents |
+| `prompts/task-runner.md` | System prompt for task runner (loop mode) |
 | `data/features.json` | Feature list with pass/fail status |
 | `data/claude-progress.txt` | Progress log across sessions |
+| `data/tasks.json` | Task queue with pending/completed status |
 | `scripts/init.sh` | Development server startup script |
-| `harness/run.sh` | Main harness execution script |
+| `scripts/task-manager.sh` | Task queue management (add, list, complete) |
+| `harness/run.sh` | Single harness execution script |
+| `harness/loop.sh` | Loop script to run Claude N times |
 
 ### Commands
 
@@ -32,6 +36,16 @@ The harness uses a **two-agent pattern**:
 
 # Continue development (coding agent)
 ./harness/run.sh
+
+# Run multiple iterations (loop mode)
+./harness/loop.sh 5                    # Run 5 iterations
+./harness/loop.sh 3 --task-id 1        # Run 3 iterations on task 1
+./harness/loop.sh 10 --verbose         # Verbose logging
+
+# Task queue management
+./scripts/task-manager.sh list        # List all tasks
+./scripts/task-manager.sh add "New task description"
+./scripts/task-manager.sh complete 1  # Mark task 1 as complete
 
 # Run specific feature test
 ./scripts/test-feature.sh "feature-name"
