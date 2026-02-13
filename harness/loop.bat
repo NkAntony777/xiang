@@ -111,8 +111,17 @@ if %CURRENT_ITER% GTR %COUNT% goto end_loop
 echo [PROGRESS] [%CURRENT_ITER%/%COUNT%] ==========================================
 echo [PROGRESS] [%CURRENT_ITER%/%COUNT%] Starting iteration...
 
-REM Build prompt
+REM Build prompt content
 set "PROMPT_FILE=%PROJECT_DIR%\prompts\task-runner.md"
+
+REM Read prompt file into a variable
+set "PROMPT_CONTENT="
+for /f "usebackq delims=" %%a in ("%PROMPT_FILE%") do (
+    set "PROMPT_CONTENT=!PROMPT_CONTENT!%%a^n"
+)
+
+REM Add task description to prompt
+set "FULL_PROMPT=%PROMPT_CONTENT%^n^n---^n^n## Current Task^n^n%TASK_DESC%"
 
 if defined DRY_RUN (
     echo [INFO] [DRY-RUN] Would execute Claude with task: %TASK_DESC%
@@ -120,21 +129,30 @@ if defined DRY_RUN (
 )
 
 REM Run Claude - use --dangerously-skip-permissions to avoid prompts
-(
-    type "%PROMPT_FILE%" | claude --dangerously-skip-permissions
-) >> "%LOG_DIR%\iteration_%CURRENT_ITER%_%TIMESTAMP%.log" 2>&1
+echo [INFO] Calling Claude...
+echo.
+echo %FULL_PROMPT% | claude --dangerously-skip-permissions >> "%LOG_DIR%\iteration_%CURRENT_ITER%_%TIMESTAMP%.log" 2>&1
+set "CLAUDE_EXIT_CODE=!ERRORLEVEL!"
+
+if !CLAUDE_EXIT_CODE! EQU 0 (
+    Claude completed echo [SUCCESS] successfully
+) else (
+    echo [ERROR] Claude exited with code !CLAUDE_EXIT_CODE!
+)
 
 :after_claude
 REM Auto-commit if not dry-run
 if not defined DRY_RUN (
     cd /d "%PROJECT_DIR%"
     git add -A >nul 2>&1
-    git commit -m "Auto-commit: iteration %CURRENT_ITER%" >nul 2>&1 || echo [INFO] No changes to commit
+    git commit -m "Auto-commit: iteration %CURRENT_ITER%" >nul 2>&1
+    if !ERRORLEVEL! EQU 0 (
+        echo [SUCCESS] Changes committed
+    ) else (
+        echo [INFO] No changes to commit
+    )
 )
 
-echo [SUCCESS] Iteration %CURRENT_ITER% completed
-
-REM Check if all features done (simplified check)
 set /a CURRENT_ITER+=1
 goto loop_start
 
@@ -147,7 +165,6 @@ echo [INFO] ==========================================
 
 REM Show recent commits
 cd /d "%PROJECT_DIR%"
-echo.
 echo [INFO] Recent commits:
 git log --oneline -5 2>nul
 
