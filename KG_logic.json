@@ -1,0 +1,238 @@
+{
+  "knowledge_graph": {
+    "node_types": [
+      "天干", "地支", "六十甲子", "纳音五行", "象意类别", "具体事物", 
+      "神煞", "五行", "方位", "季节", "宫位", "喜忌对象", "关系类型"
+    ],
+    "edge_types": [
+      "代表", "有象意", "有细分象意", "有神煞", "喜", "忌", "纳音为", 
+      "相生", "相克", "相合", "相冲", "相刑", "相害", "同位", "隔八生子",
+      "位于", "对应季节", "所属五行", "关联事物", "体用关系", "阴阳配"
+    ],
+    "nodes": [
+      { "id": "tian_gan_jia", "label": "甲", "type": "天干" },
+      { "id": "tian_gan_yi", "label": "乙", "type": "天干" },
+      { "id": "tian_gan_bing", "label": "丙", "type": "天干" },
+      { "id": "tian_gan_ding", "label": "丁", "type": "天干" },
+      { "id": "tian_gan_wu", "label": "戊", "type": "天干" },
+      { "id": "tian_gan_ji", "label": "己", "type": "天干" },
+      { "id": "tian_gan_geng", "label": "庚", "type": "天干" },
+      { "id": "tian_gan_xin", "label": "辛", "type": "天干" },
+      { "id": "tian_gan_ren", "label": "壬", "type": "天干" },
+      { "id": "tian_gan_gui", "label": "癸", "type": "天干" },
+      { "id": "di_zhi_zi", "label": "子", "type": "地支" },
+      { "id": "di_zhi_chou", "label": "丑", "type": "地支" },
+      { "id": "di_zhi_yin", "label": "寅", "type": "地支" },
+      { "id": "di_zhi_mao", "label": "卯", "type": "地支" },
+      { "id": "di_zhi_chen", "label": "辰", "type": "地支" },
+      { "id": "di_zhi_si", "label": "巳", "type": "地支" },
+      { "id": "di_zhi_wu", "label": "午", "type": "地支" },
+      { "id": "di_zhi_wei", "label": "未", "type": "地支" },
+      { "id": "di_zhi_shen", "label": "申", "type": "地支" },
+      { "id": "di_zhi_you", "label": "酉", "type": "地支" },
+      { "id": "di_zhi_xu", "label": "戌", "type": "地支" },
+      { "id": "di_zhi_hai", "label": "亥", "type": "地支" },
+      { "id": "jia_zi", "label": "甲子", "type": "六十甲子" },
+      { "id": "yi_chou", "label": "乙丑", "type": "六十甲子" },
+      { "id": "bing_yin", "label": "丙寅", "type": "六十甲子" },
+      { "id": "ding_mao", "label": "丁卯", "type": "六十甲子" },
+      { "id": "hai_zhong_jin", "label": "海中金", "type": "纳音五行" },
+      { "id": "lu_zhong_huo", "label": "炉中火", "type": "纳音五行" },
+      { "id": "xiang_yi_bao_wu", "label": "宝物", "type": "象意类别" },
+      { "id": "xiang_yi_di_yi", "label": "第一", "type": "象意类别" },
+      { "id": "xiang_yi_kai_shi", "label": "开始", "type": "象意类别" },
+      { "id": "shen_sha_jin_shen", "label": "进神", "type": "神煞" },
+      { "id": "shen_sha_xi_shen", "label": "喜神", "type": "神煞" },
+      { "id": "shen_sha_fu_xing", "label": "福星", "type": "神煞" },
+      { "id": "shen_sha_ping_tou", "label": "平头", "type": "神煞" },
+      { "id": "shen_sha_xuan_zhen", "label": "悬针", "type": "神煞" },
+      { "id": "shen_sha_po_zi", "label": "破字", "type": "神煞" },
+      { "id": "xi_ji_jin_wang", "label": "金旺", "type": "喜忌对象" },
+      { "id": "xi_ji_mu_wang", "label": "木旺", "type": "喜忌对象" },
+      { "id": "xi_ji_huo", "label": "火", "type": "喜忌对象" },
+      { "id": "xi_ji_nan_fang", "label": "南方", "type": "喜忌对象" }
+    ],
+    "edges": [
+      { "from": "jia_zi", "to": "hai_zhong_jin", "relation": "纳音为" },
+      { "from": "yi_chou", "to": "hai_zhong_jin", "relation": "纳音为" },
+      { "from": "bing_yin", "to": "lu_zhong_huo", "relation": "纳音为" },
+      { "from": "jia_zi", "to": "xiang_yi_bao_wu", "relation": "有象意" },
+      { "from": "jia_zi", "to": "xiang_yi_di_yi", "relation": "有象意" },
+      { "from": "jia_zi", "to": "xiang_yi_kai_shi", "relation": "有象意" },
+      { "from": "jia_zi", "to": "shen_sha_jin_shen", "relation": "有神煞" },
+      { "from": "jia_zi", "to": "shen_sha_xi_shen", "relation": "有神煞" },
+      { "from": "jia_zi", "to": "shen_sha_fu_xing", "relation": "有神煞" },
+      { "from": "jia_zi", "to": "shen_sha_ping_tou", "relation": "有神煞" },
+      { "from": "jia_zi", "to": "shen_sha_xuan_zhen", "relation": "有神煞" },
+      { "from": "jia_zi", "to": "shen_sha_po_zi", "relation": "有神煞" },
+      { "from": "jia_zi", "to": "xi_ji_jin_wang", "relation": "喜" },
+      { "from": "jia_zi", "to": "xi_ji_mu_wang", "relation": "喜" },
+      { "from": "yi_chou", "to": "xi_ji_huo", "relation": "喜" },
+      { "from": "yi_chou", "to": "xi_ji_nan_fang", "relation": "喜" },
+      { "from": "tian_gan_jia", "to": "xiang_yi_kai_shi", "relation": "有象意" },
+      { "from": "tian_gan_jia", "to": "xiang_yi_di_yi", "relation": "有象意" },
+      { "from": "di_zhi_zi", "to": "xiang_yi_di_yi", "relation": "有象意" },
+      { "from": "di_zhi_zi", "to": "xiang_yi_hei_an", "relation": "有象意" },
+      { "from": "tian_gan_jia", "to": "di_zhi_zi", "relation": "相合", "note": "甲子相合" },
+      { "from": "jia_zi", "to": "yi_chou", "relation": "同位", "note": "同类娶妻" },
+      { "from": "jia_zi", "to": "ren_shen", "relation": "隔八生子", "note": "甲子隔八生壬申" }
+    ]
+  },
+  "inference_rules": [
+    {
+      "rule_id": "RULE_001",
+      "name": "干支组合象意推理",
+      "description": "将天干与地支的原始象意组合，生成六十甲子的新象意",
+      "pattern": "天干 X 有象意 A_set，地支 Y 有象意 B_set，且 X 与 Y 构成甲子 Z，则 Z 有象意 C = 组合(A_set, B_set)",
+      "examples": [
+        {
+          "天干": "甲",
+          "地支": "子",
+          "组合象意": ["第一孩子", "长子", "开国皇帝", "解密", "转机", "第一大河", "交响乐", "闷声发大财"]
+        },
+        {
+          "天干": "乙",
+          "地支": "丑",
+          "组合象意": ["弯曲的枢纽", "发动机", "开矿", "盗墓"]
+        }
+      ],
+      "confidence": 0.85,
+      "source": "三命通会讲座第一阶段"
+    },
+    {
+      "rule_id": "RULE_002",
+      "name": "纳音同位娶妻推理",
+      "description": "相邻两组天干五行相同的干支，纳音相同",
+      "pattern": "IF 甲子 Z1 与 甲子 Z2 天干五行相同 AND 地支相邻(阴阳配对) THEN Z1 纳音 = Z2 纳音",
+      "examples": [
+        "甲子乙丑同为海中金",
+        "壬申癸酉同为剑锋金"
+      ],
+      "confidence": 1.0,
+      "source": "三命通会·总论纳音"
+    },
+    {
+      "rule_id": "RULE_003",
+      "name": "纳音隔八生子推理",
+      "description": "按六十甲子顺序，隔八位产生的干支纳音由前一组生之，五行按五音相生次序",
+      "pattern": "IF 甲子 Z1 与 甲子 Z2 在六十甲子中相隔8位 THEN Z2 纳音 = 生(Z1 纳音) 按五音相生序",
+      "examples": [
+        "甲子金 → 隔八 → 壬申金（同五行，三元周期）",
+        "壬申金 → 隔八 → 庚辰金",
+        "庚辰金 → 隔八 → 戊子火"
+      ],
+      "confidence": 1.0,
+      "source": "三命通会·总论纳音"
+    },
+    {
+      "rule_id": "RULE_004",
+      "name": "纳音大衍数推算",
+      "description": "用大衍之数49减去两组同位干支的太玄数和，除以5取余，余数五行所生之五行即为纳音",
+      "pattern": "太玄数: 甲己子午9, 乙庚丑未8, 丙辛寅申7, 丁壬卯酉6, 戊癸辰戌5, 巳亥4。\n纳音五行 = 生( (49 - sum(四柱太玄数)) mod 5 对应的五行 )",
+      "examples": [
+        "戊戌己亥: 戊5+戊5+己9+亥4=23, 49-23=26, 26 mod 5 =1, 1水, 水生木 → 纳音木"
+      ],
+      "confidence": 1.0,
+      "source": "三命通会·总论纳音"
+    },
+    {
+      "rule_id": "RULE_005",
+      "name": "神煞自带推理",
+      "description": "六十甲子各柱自带固定神煞，可根据干支字形、组合、纳音状态推断",
+      "pattern": "IF 甲子 = '甲子' THEN 有神煞('进神','喜神','福星','平头','悬针','破字')",
+      "examples": [
+        "甲子: 进神、喜神、福星、平头、悬针、破字",
+        "乙丑: 福星、华盖、正印",
+        "丙寅: 福星、禄刑、平头、聋哑"
+      ],
+      "confidence": 0.9,
+      "source": "三命通会·释六十甲子性质吉凶"
+    },
+    {
+      "rule_id": "RULE_006",
+      "name": "纳音盛大与小弱变易推理",
+      "description": "年命纳音为小弱者，若月日时胎有同五行之盛大者，则为‘变盛大’，主吉；年命纳音为盛大者，若见同五行之小弱者，则为‘变小弱’，主凶；但需结合所得所控关系",
+      "pattern": "IF 年命纳音 ∈ 小弱集合 AND 他柱有同五行纳音 ∈ 盛大集合 AND 年命能得之/控之 THEN 格局提升，主富贵;\nIF 年命纳音 ∈ 盛大集合 AND 他柱有同五行纳音 ∈ 小弱集合 AND 年命失之/被控 THEN 格局降低，主困顿",
+      "小弱集合": ["海中金","金箔金","白蜡金","沙中金","钗钏金","涧下水","井泉水","长流水","天河水","大溪水","霹雳火","炉中火","山下火","覆灯火","山头火","桑柘木","杨柳木","平地木","石榴木","壁上土","路旁土","沙中土","屋上土"],
+      "盛大集合": ["剑锋金","大海水","天上火","大林木","松柏木","大驿土","城头土"],
+      "examples": [
+        "张之洞: 丁酉山下火(小弱) → 时柱戊午天上火(盛大)，得之，贵",
+        "被奸杀女: 己丑霹雳火(盛大) → 时柱丁卯炉中火(小弱)，失之，凶"
+      ],
+      "confidence": 0.75,
+      "source": "三命通会·释六十甲子性质吉凶·盛大者欲变小弱"
+    },
+    {
+      "rule_id": "RULE_007",
+      "name": "十神定位推理（综南命理）",
+      "description": "在八字中，根据宫位划分（年月他宫，日时我宫）和十神关系，可定位六亲、事业等",
+      "pattern": "IF 某柱天干地支为我宫所透，且与他宫某柱发生生克合冲刑害，则此柱可代表命主的某方面能力、配偶、父母等",
+      "examples": [
+        "万民英八字: 壬午癸丑庚寅丙戌，丙火七杀为我宫时柱所透，合年支午，代表国家赋予武权"
+      ],
+      "confidence": 0.8,
+      "source": "三命通会讲座·综南命理"
+    },
+    {
+      "rule_id": "RULE_008",
+      "name": "五行相生取象推理",
+      "description": "依据五行相生的原始意象，结合干支属性，推理出具体人事物的变化",
+      "pattern": "IF 主生者 X 有象意 A，受生者 Y 有象意 B，则 X生Y 的象意可解释为 A→B 的转变",
+      "examples": [
+        "木生火: 木为延伸发展，火为向上专一，可解释为‘广泛学习后专注专业’",
+        "金生水: 金为坚硬，水为智慧，可解释为‘坚定意志生出智慧’"
+      ],
+      "confidence": 0.7,
+      "source": "三命通会·论五行生克"
+    },
+    {
+      "rule_id": "RULE_009",
+      "name": "进交伏退神煞推理",
+      "description": "根据特定干支组合，推断命主做事之风格（进神激进，交神反复，伏神停滞，退神退缩）",
+      "pattern": "IF 柱为 '甲子','甲午','己卯','己酉' THEN 带进神，主积极进取;\nIF 柱为 '丙子','丙午','辛卯','辛酉' THEN 带交神，主反复不协调;\nIF 柱为 '戊寅','戊申','癸巳','癸亥' THEN 带伏神，主停滞受困;\nIF 柱为 '丁丑','丁未','壬辰','壬戌' THEN 带退神，主退缩后退",
+      "confidence": 0.9,
+      "source": "三命通会·释六十甲子性质吉凶"
+    },
+    {
+      "rule_id": "RULE_010",
+      "name": "九丑淫欲妨害煞推理",
+      "description": "带九丑的干支，若在八字中组合不利，易有感情丑闻、产厄等",
+      "pattern": "IF 柱 ∈ ['乙卯','乙酉','戊子','戊午','己卯','己酉','辛卯','辛酉','壬子','壬午'] THEN 带九丑煞;\nIF 九丑柱为日柱或时柱，且与桃花、财官等组合不当，则主感情风波",
+      "confidence": 0.7,
+      "source": "三命通会·释六十甲子性质吉凶"
+    },
+    {
+      "rule_id": "RULE_011",
+      "name": "干支字形神煞推理",
+      "description": "根据干支字形，可直接推断某些神煞（平头、悬针、破字、曲脚、阙字、聋哑、杖刑等）",
+      "pattern": "IF 字形上平顶 THEN 平头煞;\nIF 字形中竖尖锐下扎 THEN 悬针煞;\nIF 字形有分裂空缺 THEN 破字/阙字;\nIF 字形弯钩 THEN 曲脚煞;\nIF 干支有特定组合 THEN 杖刑等",
+      "examples": [
+        "甲、丙、丁、戊、庚、壬、辰等有平头",
+        "甲、辛、申、卯、午等有悬针",
+        "甲、癸、申、酉、丑、未等有破字",
+        "己、巳、乙等有曲脚",
+        "丑有阙字"
+      ],
+      "confidence": 0.95,
+      "source": "三命通会·释六十甲子性质吉凶"
+    },
+    {
+      "rule_id": "RULE_012",
+      "name": "纳音生克条件推理",
+      "description": "纳音五行之间的生克受其象意位置影响，并非所有纳音都能随意生克",
+      "pattern": "IF 纳音 X 为天上火、霹雳火等天上之火，则难以生地上之木，但可克海中金等;\nIF 纳音 Y 为海中金，则一般火不能克，唯霹雳火可克",
+      "examples": [
+        "霹雳火可克海中金",
+        "天上火难生大林木"
+      ],
+      "confidence": 0.8,
+      "source": "三命通会·纳音五行阴阳取象及生克条件"
+    }
+  ],
+  "meta": {
+    "version": "1.0",
+    "author": "基于三命通会讲座整理",
+    "description": "六十甲子象意知识图谱与推理规则，可用于八字命理辅助分析系统",
+    "date": "2026-02-13"
+  }
+}

@@ -20,6 +20,9 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 LOG_DIR="$PROJECT_DIR/logs"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 
+# Add common Python/Node paths to PATH
+export PATH="$PATH:/c/Program Files/nodejs:/d/anaconda:/d/anaconda/python:/c/Users/$USER/AppData/Local/Programs/Python/Python311"
+
 cd "$PROJECT_DIR"
 
 # Create log directory
@@ -127,46 +130,82 @@ log_info "=========================================="
 # Get task to work on
 get_task() {
     if [ -n "$TASK_ID" ]; then
-        # Get specific task
-        node -e "
+        # Get specific task - try node first, then python
+        if command -v node &> /dev/null; then
+            node -e "
 const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('data/tasks.json', 'utf8'));
 const task = data.tasks.find(t => t.id == $TASK_ID);
-if (task) {
-    console.log(task.description);
-} else {
-    console.log('');
-}
+if (task) { console.log(task.description); } else { console.log(''); }
 " 2>/dev/null || echo ""
+        elif command -v python &> /dev/null; then
+            python -c "
+import json
+with open('data/tasks.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+for t in data.get('tasks', []):
+    if t['id'] == $TASK_ID:
+        print(t['description'])
+        break
+else:
+    print('')
+" 2>/dev/null || echo ""
+        else
+            echo ""
+        fi
     else
-        # Get next pending task
-        node -e "
+        # Get next pending task - try node first, then python
+        if command -v node &> /dev/null; then
+            node -e "
 const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('data/tasks.json', 'utf8'));
 const task = data.tasks.find(t => t.status === 'pending');
-if (task) {
-    console.log(task.description);
-} else {
-    console.log('');
-}
+if (task) { console.log(task.description); } else { console.log(''); }
 " 2>/dev/null || echo ""
+        elif command -v python &> /dev/null; then
+            python -c "
+import json
+with open('data/tasks.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+for t in data.get('tasks', []):
+    if t['status'] == 'pending':
+        print(t['description'])
+        break
+else:
+    print('')
+" 2>/dev/null || echo ""
+        else
+            echo ""
+        fi
     fi
 }
 
 # Check if there are pending tasks
 check_pending_tasks() {
-    node -e "
+    if command -v node &> /dev/null; then
+        node -e "
 const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('data/tasks.json', 'utf8'));
 const pending = data.tasks.filter(t => t.status === 'pending').length;
 console.log(pending);
 " 2>/dev/null || echo "0"
+    elif command -v python3 &> /dev/null; then
+        python3 -c "
+import json
+with open('data/tasks.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+print(len([t for t in data.get('tasks', []) if t['status'] == 'pending']))
+" 2>/dev/null || echo "0"
+    else
+        echo "0"
+    fi
 }
 
 # Mark task as completed
 mark_task_completed() {
     local task_id="$1"
-    node -e "
+    if command -v node &> /dev/null; then
+        node -e "
 const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('data/tasks.json', 'utf8'));
 const task = data.tasks.find(t => t.id == $task_id);
@@ -181,6 +220,26 @@ if (task) {
     console.log('Task $task_id not found');
 }
 " 2>/dev/null || true
+    elif command -v python3 &> /dev/null; then
+        python3 -c "
+import json
+from datetime import datetime
+with open('data/tasks.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+for t in data.get('tasks', []):
+    if t['id'] == $task_id:
+        t['status'] = 'completed'
+        t['completed_at'] = datetime.now().isoformat() + 'Z'
+        data['metadata']['completed'] += 1
+        data['metadata']['pending'] -= 1
+        with open('data/tasks.json', 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f'Task $task_id marked as completed')
+        break
+else:
+    print(f'Task $task_id not found')
+" 2>/dev/null || true
+    fi
 }
 
 # Check if all features are done
