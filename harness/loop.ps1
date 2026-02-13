@@ -136,7 +136,7 @@ for ($i = 1; $i -le $Count; $i++) {
     if ($DryRun) {
         Write-Log "[DRY-RUN] Would execute Claude with task: $taskDesc" "INFO"
     } else {
-        Write-Log "Calling Claude..." "INFO"
+        Write-Log "Calling Claude (this may take a while)..." "INFO"
 
         # Run Claude with the prompt
         $logFile = "$LogDir\iteration_${i}_${Timestamp}.log"
@@ -145,11 +145,68 @@ for ($i = 1; $i -le $Count; $i++) {
         $tempPromptFile = "$env:TEMP\claude_prompt_$PID.txt"
         $fullPrompt | Out-File -FilePath $tempPromptFile -Encoding UTF8
 
-        # Call Claude
-        Get-Content $tempPromptFile | claude --dangerously-skip-permissions 2>&1 | Tee-Object -FilePath $logFile
+        # Save current location
+        $origLocation = Get-Location
 
-        # Clean up
-        Remove-Item $tempPromptFile -Force -ErrorAction SilentlyContinue
+        try {
+            Set-Location $ProjectDir
+
+            # Call claude directly with input from file
+            # Using --print to get structured output
+            $processInfo = New-Object System.Diagnostics.ProcessStartInfo
+            $processInfo.FileName = "claude"
+            $processInfo.Arguments = "--dangerously-skip-permissions --print"
+            $processInfo.RedirectStandardInput = $true
+            $processInfo.RedirectStandardOutput = $true
+            $processInfo.RedirectStandardError = $true
+            $processInfo.UseShellExecute = $false
+            $processInfo.CreateNoWindow = $true
+            $processInfo.StandardInputEncoding = [System.Text.Encoding]::UTF8
+            $processInfo.StandardOutputEncoding = [System.Text.Encoding]::UTF8
+            $processInfo.StandardErrorEncoding = [System.Text.Encoding]::UTF8
+
+            $process = New-Object System.Diagnostics.Process
+            $process.StartInfo = $processInfo
+
+            $process.Start() | Out-Null
+
+            # Send the prompt
+            $fullPrompt | ForEach-Object { $process.StandardInput.WriteLine($_) }
+            $process.StandardInput.Close()
+
+            # Read output with timeout
+            $output = ""
+            $timeout = 600  # 10 minutes
+            $elapsed = 0
+
+            while (-not $process.HasExited -and $elapsed -lt $timeout) {
+                Start-Sleep -Seconds 5
+                $elapsed += 5
+                Write-Host "." -NoNewline
+            }
+
+            if (-not $process.HasExited) {
+                Write-Log "Timeout reached, killing process..." "WARN"
+                $process.Kill()
+            }
+
+            $stdout = $process.StandardOutput.ReadToEnd()
+            $stderr = $process.StandardError.ReadToEnd()
+
+            $stdout | Out-File -FilePath $logFile -Encoding UTF8
+            if ($stderr) {
+                $stderr | Out-File -FilePath $logFile -Append -Encoding UTF8
+            }
+
+            Write-Log "Claude execution completed" "SUCCESS"
+
+        } catch {
+            Write-Log "Error: $_" "ERROR"
+        } finally {
+            Set-Location $origLocation
+            # Clean up
+            Remove-Item $tempPromptFile -Force -ErrorAction SilentlyContinue
+        }
 
         # Auto-commit
         Set-Location $ProjectDir
