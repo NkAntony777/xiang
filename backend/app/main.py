@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.routers import ganzhi
 
 app = FastAPI(
     title="六十甲子象意百科查询系统 API",
@@ -9,6 +10,9 @@ app = FastAPI(
     docs_url="/api/docs",
     redoc_url="/api/redoc",
 )
+
+# Register routers
+app.include_router(ganzhi.router)
 
 # Configure CORS
 app.add_middleware(

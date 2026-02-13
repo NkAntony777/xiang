@@ -10,9 +10,9 @@
     {
       "id": 2,
       "description": "Create SQLite database models (ganzhi, nayin, xiangyi, shensha, xiji, guanxi)",
-      "status": "pending",
+      "status": "completed",
       "created_at": "2026-02-13T00:00:00Z",
-      "completed_at": null
+      "completed_at": "2026-02-13T15:30:00Z"
     },
     {
       "id": 3,
@@ -108,7 +108,7 @@
   ],
   "metadata": {
     "total": 15,
-    "completed": 3,
-    "pending": 12
+    "completed": 4,
+    "pending": 11
   }
 }
