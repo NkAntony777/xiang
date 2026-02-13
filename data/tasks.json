@@ -115,35 +115,35 @@
     {
       "id": 17,
       "description": "Fix backend API bugs found during testing",
-      "status": "pending",
+      "status": "completed",
       "created_at": "2026-02-13T21:00:00Z",
-      "completed_at": null
+      "completed_at": "2026-02-13T22:05:00Z"
     },
     {
       "id": 18,
       "description": "Test frontend build and pages render correctly",
-      "status": "pending",
+      "status": "completed",
       "created_at": "2026-02-13T21:00:00Z",
-      "completed_at": null
+      "completed_at": "2026-02-13T22:10:00Z"
     },
     {
       "id": 19,
       "description": "Fix frontend bugs found during testing",
-      "status": "pending",
+      "status": "completed",
       "created_at": "2026-02-13T21:00:00Z",
-      "completed_at": null
+      "completed_at": "2026-02-13T22:10:00Z"
     },
     {
       "id": 20,
       "description": "Test full integration (backend + frontend) and fix issues",
-      "status": "pending",
+      "status": "completed",
       "created_at": "2026-02-13T21:00:00Z",
-      "completed_at": null
+      "completed_at": "2026-02-13T22:15:00Z"
     }
   ],
   "metadata": {
     "total": 20,
-    "completed": 16,
-    "pending": 4
+    "completed": 20,
+    "pending": 0
   }
 }
