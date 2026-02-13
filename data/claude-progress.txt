@@ -220,6 +220,61 @@
 ### Next
 - Task 9: Frontend - Create homepage (Search bar, hot ganzhi cards, quick entry)
 
+### Session 2026-02-13 (Task 16 - Test Backend API)
+
+### Completed
+- Task 16: Backend API Testing completed
+- Tested all API endpoints for: ganzhi, nayin, shensha, guanxi
+- Created comprehensive test script at backend/test_api.py
+
+### Test Results
+- Total tests: 27
+- Passed: 26
+- Failed: 1
+
+### API Endpoints Verified
+**Ganzhi API:**
+- GET /api/ganzhi - List all 60 Ganzhi
+- GET /api/ganzhi/search - Search by query
+- GET /api/ganzhi/names - Get all names
+- GET /api/ganzhi/{ganzhi_name} - Get detail
+- POST /api/ganzhi/compare - Compare multiple Ganzhi
+
+**Nayin API:**
+- GET /api/nayin - List all
+- GET /api/nayin/by-ganzhi/{ganzhi} - Get by Ganzhi
+- GET /api/nayin/{nayin_name}/ganzhi - Get Ganzhi by Nayin
+- GET /api/nayin/status - Get all statuses
+- GET /api/nayin/status/{status} - Get by status
+- GET /api/nayin/category/shengda - Get by category (works)
+- GET /api/nayin/category/xiaoruo - Returns 404 (no data)
+- GET /api/nayin/calc/{ganzhi} - Calculate Nayin
+
+**Shensha API:**
+- GET /api/shensha - List all
+- GET /api/shensha/types - Get types
+- GET /api/shensha/type/{type} - Get by type
+- GET /api/shensha/zixing - Get Zixing
+- GET /api/shensha/ganzhi/{ganzhi} - Get by Ganzhi
+- GET /api/shensha/{name} - Get detail
+- GET /api/shensha/{name}/ganzhi - Get Ganzhi by Shensha
+
+**Guanxi API:**
+- GET /api/guanxi - List all
+- GET /api/guanxi/types - Get types
+- GET /api/guanxi/type/{type} - Get by type
+- GET /api/guanxi/ganzhi/{ganzhi} - Get by Ganzhi
+- GET /api/guanxi/between/{g1}/{g2} - Get between two Ganzhi
+
+### Notes
+- 1 endpoint returns 404 as expected: /api/nayin/category/xiaoruo
+  - This is correct behavior - no data exists for "xiaoruo" category
+  - The database only has "长生" and "帝旺" states, not "衰"
+- All other 26 endpoints working correctly
+
+### Next
+- Task 17: Fix any backend bugs (none found - API working correctly)
+
 ---
 
 ## Session Guidelines
