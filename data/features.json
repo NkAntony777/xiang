@@ -51,7 +51,7 @@
       "steps": [
         "list, detail, ganzhi-shensha, zixing endpoints"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "api",
