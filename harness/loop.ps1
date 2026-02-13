@@ -7,7 +7,7 @@ param(
     [string]$CustomPrompt = "",
     [switch]$Verbose = $false,
     [switch]$DryRun = $false,
-    [int]$Timeout = 30  # 默认30分钟超时，可自定义
+    [int]$Timeout = 30
 )
 
 $ErrorActionPreference = "Continue"
