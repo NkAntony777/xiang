@@ -1,23 +1,30 @@
 # Project Progress Log
 
-## Project: [PROJECT_NAME]
+## Project: 六十甲子象意百科查询系统
 
 ### Overview
-[Project description and goals]
+构建一个面向六十甲子干支象意的结构化百科查询系统，提供干支基础信息、纳音五行、神煞、象意、喜忌、干支关系等知识的一站式检索与可视化。
 
 ### Environment Setup
-- [ ] Initialize git repository
-- [ ] Set up development environment
-- [ ] Create feature list
+- [x] Initialize project structure
+- [x] Set up FastAPI backend
+- [x] Set up React frontend
+- [x] Configure SQLite database
 
 ### Completed Features
-None yet - project just initialized
+- Task 1: Initialize project structure (FastAPI + React)
 
 ### Remaining Work
-[High-level description of what needs to be built]
+- Task 2: Create SQLite database models
+- Task 3: Create data import script
+- Task 4-8: Implement API endpoints
+- Task 9-14: Implement frontend pages
+- Task 15: Docker configuration
 
 ### Technical Notes
-[Any important technical decisions or context]
+- Backend: FastAPI + SQLAlchemy + SQLite
+- Frontend: React 18 + Vite + Ant Design + ECharts
+- Database initialized at backend/data/liushijiazi.db
 
 ---
 

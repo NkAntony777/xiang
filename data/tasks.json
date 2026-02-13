@@ -3,9 +3,9 @@
     {
       "id": 1,
       "description": "Initialize project structure (FastAPI + React)",
-      "status": "pending",
+      "status": "completed",
       "created_at": "2026-02-13T00:00:00Z",
-      "completed_at": null
+      "completed_at": "2026-02-13T14:30:00Z"
     },
     {
       "id": 2,
@@ -108,7 +108,7 @@
   ],
   "metadata": {
     "total": 15,
-    "completed": 0,
-    "pending": 15
+    "completed": 1,
+    "pending": 14
   }
 }

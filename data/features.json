@@ -1,22 +1,135 @@
 {
-  "project": "PROJECT_NAME",
-  "description": "PROJECT_DESCRIPTION",
+  "project": "六十甲子象意百科查询系统",
+  "description": "面向六十甲子干支象意的结构化百科查询系统",
   "features": [
     {
-      "category": "functional",
-      "description": "Feature description here",
+      "category": "backend",
+      "description": "Initialize project structure (FastAPI + React)",
       "steps": [
-        "Step 1: What user does",
-        "Step 2: What happens",
-        "Step 3: Expected result"
+        "Create FastAPI backend structure with models, routers, schemas",
+        "Create React frontend with pages and components",
+        "Configure Vite proxy and SQLite database"
+      ],
+      "passes": true
+    },
+    {
+      "category": "backend",
+      "description": "Create SQLite database models",
+      "steps": [
+        "Create SQLAlchemy models: ganzhi, nayin, xiangyi, shensha, ganzhi_shensha, xiji, guanxi"
+      ],
+      "passes": false
+    },
+    {
+      "category": "backend",
+      "description": "Create data import script",
+      "steps": [
+        "Parse xiangyi.json and KG_logic.json",
+        "Import data into SQLite database"
+      ],
+      "passes": false
+    },
+    {
+      "category": "api",
+      "description": "Implement Ganzhi API",
+      "steps": [
+        "Search, detail, compare endpoints"
+      ],
+      "passes": false
+    },
+    {
+      "category": "api",
+      "description": "Implement Nayin API",
+      "steps": [
+        "by-ganzhi, by-nayin, status, category, calculation endpoints"
+      ],
+      "passes": false
+    },
+    {
+      "category": "api",
+      "description": "Implement Shensha API",
+      "steps": [
+        "list, detail, ganzhi-shensha, zixing endpoints"
+      ],
+      "passes": false
+    },
+    {
+      "category": "api",
+      "description": "Implement Guanxi API",
+      "steps": [
+        "all relations, single ganzhi relations, types endpoints"
+      ],
+      "passes": false
+    },
+    {
+      "category": "api",
+      "description": "Implement Admin API",
+      "steps": [
+        "CRUD for all entities, import/export endpoints"
+      ],
+      "passes": false
+    },
+    {
+      "category": "frontend",
+      "description": "Create homepage",
+      "steps": [
+        "Search bar, hot ganzhi cards, quick entry"
+      ],
+      "passes": false
+    },
+    {
+      "category": "frontend",
+      "description": "Create Ganzhi detail page",
+      "steps": [
+        "Tabs: xiangyi, shensha, xiji, guanxi, compare"
+      ],
+      "passes": false
+    },
+    {
+      "category": "frontend",
+      "description": "Create Nayin专题 page",
+      "steps": [
+        "Category nav, detail, status, calculation demo"
+      ],
+      "passes": false
+    },
+    {
+      "category": "frontend",
+      "description": "Create Shensha dictionary page",
+      "steps": [
+        "Index, search, detail popup"
+      ],
+      "passes": false
+    },
+    {
+      "category": "frontend",
+      "description": "Create Guanxi graph page",
+      "steps": [
+        "D3.js/ECharts visualization"
+      ],
+      "passes": false
+    },
+    {
+      "category": "frontend",
+      "description": "Create Admin dashboard",
+      "steps": [
+        "Data management and import/export"
+      ],
+      "passes": false
+    },
+    {
+      "category": "devops",
+      "description": "Create Docker configuration",
+      "steps": [
+        "Dockerfile and docker-compose.yml"
       ],
       "passes": false
     }
   ],
   "metadata": {
-    "created": "YYYY-MM-DD",
-    "last_updated": "YYYY-MM-DD",
-    "total_features": 0,
-    "completed": 0
+    "created": "2026-02-13",
+    "last_updated": "2026-02-13",
+    "total_features": 15,
+    "completed": 1
   }
 }
