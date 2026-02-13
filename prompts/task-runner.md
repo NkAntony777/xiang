@@ -64,6 +64,29 @@ Based on the task ID, implement the required functionality:
 **Task 15 - Docker**:
 - Create Dockerfile and docker-compose.yml
 
+**Task 16 - Test Backend API**:
+- Test all API endpoints: `/api/ganzhi/*`, `/api/nayin/*`, `/api/shensha/*`, `/api/guanxi/*`
+- Use Python to start server and test with curl or requests
+- Document any bugs found
+
+**Task 17 - Fix Backend Bugs**:
+- Fix bugs found in Task 16
+- Re-test to verify fixes work
+
+**Task 18 - Test Frontend**:
+- Run `cd frontend && npm run build` to test build
+- Check for any build errors
+- Verify pages render correctly
+
+**Task 19 - Fix Frontend Bugs**:
+- Fix bugs found in Task 18
+- Re-test to verify fixes work
+
+**Task 20 - Integration Test**:
+- Start both backend and frontend
+- Test full flow from browser
+- Fix any integration issues
+
 ### Step 3: Testing
 - Verify the implementation works
 - Test API endpoints with curl
