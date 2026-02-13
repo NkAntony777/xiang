@@ -131,6 +131,28 @@
 ### Next
 - Task 5: Implement Nayin API (by-ganzhi, by-nayin, status, category, calculation)
 
+### Session 2026-02-13 (Task 5 - Nayin API Implementation)
+
+### Completed
+- Task 5: Nayin API implemented and verified
+  - GET /api/nayin/by-ganzhi/{ganzhi} - Get Nayin info by Ganzhi name
+  - GET /api/nayin/{nayin_name}/ganzhi - Get Ganzhi list by Nayin name
+  - GET /api/nayin - Get all Nayin records with Ganzhi
+  - GET /api/nayin/status - Get all status (十二长生) values
+  - GET /api/nayin/status/{status} - Get Ganzhi by status
+  - GET /api/nayin/category/{category} - Get by category (shengda/xiaoruo)
+  - GET /api/nayin/calc/{ganzhi} - Calculate Nayin with 3 methods
+
+### Notes
+- Created crud/nayin.py with all CRUD operations
+- Created routers/nayin.py with all API endpoints
+- Created schemas/nayin.py with Pydantic models
+- Added calculation methods: 隔八相生法, 太玄数推算法, 河图数直接法
+- All endpoints tested and working
+
+### Next
+- Task 6: Implement Shensha API (list, detail, ganzhi-shensha, zixing)
+
 ---
 
 ## Session Guidelines
