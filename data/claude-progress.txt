@@ -1,0 +1,37 @@
+# Project Progress Log
+
+## Project: [PROJECT_NAME]
+
+### Overview
+[Project description and goals]
+
+### Environment Setup
+- [ ] Initialize git repository
+- [ ] Set up development environment
+- [ ] Create feature list
+
+### Completed Features
+None yet - project just initialized
+
+### Remaining Work
+[High-level description of what needs to be built]
+
+### Technical Notes
+[Any important technical decisions or context]
+
+---
+
+## Session Guidelines
+
+For each session:
+1. Read this progress file first
+2. Check git log for recent changes
+3. Review features.json for incomplete items
+4. Start dev server and verify nothing is broken
+5. Implement ONE feature
+6. Test thoroughly
+7. Update features.json (set passes: true)
+8. Update this progress file
+9. Git commit with descriptive message
+
+Remember: Work incrementally. One feature per session.

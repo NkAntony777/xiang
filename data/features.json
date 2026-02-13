@@ -1,0 +1,22 @@
+{
+  "project": "PROJECT_NAME",
+  "description": "PROJECT_DESCRIPTION",
+  "features": [
+    {
+      "category": "functional",
+      "description": "Feature description here",
+      "steps": [
+        "Step 1: What user does",
+        "Step 2: What happens",
+        "Step 3: Expected result"
+      ],
+      "passes": false
+    }
+  ],
+  "metadata": {
+    "created": "YYYY-MM-DD",
+    "last_updated": "YYYY-MM-DD",
+    "total_features": 0,
+    "completed": 0
+  }
+}
