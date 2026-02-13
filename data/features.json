@@ -18,7 +18,7 @@
       "steps": [
         "Create SQLAlchemy models: ganzhi, nayin, xiangyi, shensha, ganzhi_shensha, xiji, guanxi"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "backend",
@@ -27,7 +27,7 @@
         "Parse xiangyi.json and KG_logic.json",
         "Import data into SQLite database"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "api",
@@ -35,7 +35,7 @@
       "steps": [
         "Search, detail, compare endpoints"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "api",
@@ -130,6 +130,6 @@
     "created": "2026-02-13",
     "last_updated": "2026-02-13",
     "total_features": 15,
-    "completed": 1
+    "completed": 4
   }
 }
