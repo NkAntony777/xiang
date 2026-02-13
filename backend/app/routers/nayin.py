@@ -87,8 +87,7 @@ def get_nayin_by_category(category: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Category must be 'shengda' or 'xiaoruo'")
 
     results = crud.nayin.get_nayin_by_category(db, category)
-    if not results:
-        raise HTTPException(status_code=404, detail=f"No Ganzhi found in category '{category}'")
+    # Return empty list if no results (e.g., xiaoruo has no data in current database)
     return results
 
 
