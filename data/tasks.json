@@ -139,11 +139,109 @@
       "status": "completed",
       "created_at": "2026-02-13T21:00:00Z",
       "completed_at": "2026-02-13T22:15:00Z"
+    },
+    {
+      "id": 21,
+      "description": "Install Playwright and create test directory structure",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 22,
+      "description": "Playwright E2E Test: Home page loads correctly with search bar and navigation",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 23,
+      "description": "Playwright E2E Test: Search functionality - search for '甲子' and verify results",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 24,
+      "description": "Playwright E2E Test: Ganzhi detail page displays all info (wuxing, nayin, xiangyi, shensha, xiji, guanxi)",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 25,
+      "description": "Playwright E2E Test: Nayin page - filter by wuxing category, view status list",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 26,
+      "description": "Playwright E2E Test: Shensha page - list all shensha, search and view detail",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 27,
+      "description": "Playwright E2E Test: Guanxi graph page renders with 60 nodes and edges",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 28,
+      "description": "Playwright E2E Test: Compare page - add 2 ganzhi and verify comparison table",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 29,
+      "description": "Playwright E2E Test: Navigation between pages works correctly",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 30,
+      "description": "Playwright E2E Test: Responsive design - test on mobile viewport (375px)",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 31,
+      "description": "Fix bugs found in Playwright E2E tests (iteration 1)",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 32,
+      "description": "Fix bugs found in Playwright E2E tests (iteration 2)",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 33,
+      "description": "Fix bugs found in Playwright E2E tests (iteration 3)",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 34,
+      "description": "Final integration test - verify all features work end-to-end",
+      "status": "pending",
+      "created_at": "2026-02-13T22:30:00Z",
+      "completed_at": null
     }
   ],
   "metadata": {
-    "total": 20,
+    "total": 34,
     "completed": 20,
-    "pending": 0
+    "pending": 14
   }
 }

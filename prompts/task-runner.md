@@ -87,6 +87,30 @@ Based on the task ID, implement the required functionality:
 - Test full flow from browser
 - Fix any integration issues
 
+**Task 21 - Install Playwright**:
+- Run `cd frontend && npm install -D @playwright/test`
+- Create `frontend/tests/` directory
+- Create `playwright.config.js`
+
+**Task 22-30 - Playwright E2E Tests**:
+Each task tests a specific feature using Playwright:
+- Start backend on port 8000 and frontend on port 5173
+- Use Playwright to navigate to the page
+- Verify elements exist and are visible
+- Test interactions (click, type, etc.)
+- Take screenshots on failure
+- Write results to logs/
+
+**Task 31-33 - Fix Bugs**:
+- Read Playwright test results
+- Fix any bugs found in frontend or backend
+- Re-run tests to verify fixes
+
+**Task 34 - Final Test**:
+- Run all Playwright tests
+- Verify all features work end-to-end
+- Generate test report
+
 ### Step 3: Testing
 - Verify the implementation works
 - Test API endpoints with curl
