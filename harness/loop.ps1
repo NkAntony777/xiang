@@ -175,10 +175,10 @@ for ($i = 1; $i -le $Count; $i++) {
 
             # Read output with timeout (configurable, default 30 minutes)
             $output = ""
-            $timeout = $Timeout * 60  # Convert minutes to seconds
+            $timeoutSeconds = [int]$Timeout * 60  # Convert minutes to seconds
             $elapsed = 0
 
-            while (-not $process.HasExited -and $elapsed -lt $timeout) {
+            while (-not $process.HasExited -and $elapsed -lt $timeoutSeconds) {
                 Start-Sleep -Seconds 5
                 $elapsed += 5
                 Write-Host "." -NoNewline
