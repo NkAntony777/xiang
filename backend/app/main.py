@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import ganzhi, nayin, shensha, guanxi
+from app.routers import ganzhi, nayin, shensha, guanxi, admin
 
 app = FastAPI(
     title="六十甲子象意百科查询系统 API",
@@ -16,6 +16,7 @@ app.include_router(ganzhi.router)
 app.include_router(nayin.router)
 app.include_router(shensha.router)
 app.include_router(guanxi.router)
+app.include_router(admin.router)
 
 # Configure CORS
 app.add_middleware(
