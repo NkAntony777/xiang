@@ -2,29 +2,113 @@
   "tasks": [
     {
       "id": 1,
-      "description": "Build a simple todo app with React",
+      "description": "Initialize project structure (FastAPI + React)",
       "status": "pending",
-      "created_at": "2024-01-01T00:00:00Z",
+      "created_at": "2026-02-13T00:00:00Z",
       "completed_at": null
     },
     {
       "id": 2,
-      "description": "Add user authentication to the todo app",
+      "description": "Create SQLite database models (ganzhi, nayin, xiangyi, shensha, xiji, guanxi)",
       "status": "pending",
-      "created_at": "2024-01-01T00:00:00Z",
+      "created_at": "2026-02-13T00:00:00Z",
       "completed_at": null
     },
     {
       "id": 3,
-      "description": "Add dark mode support",
+      "description": "Create data import script to load xiangyi.json and KG_logic.json into database",
       "status": "pending",
-      "created_at": "2024-01-01T00:00:00Z",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 4,
+      "description": "Implement Ganzhi API (search, detail, compare endpoints)",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 5,
+      "description": "Implement Nayin API (by-ganzhi, by-nayin, status, category, calculation)",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 6,
+      "description": "Implement Shensha API (list, detail, ganzhi-shensha, zixing)",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 7,
+      "description": "Implement Guanxi API (all relations, single ganzhi relations, types)",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 8,
+      "description": "Implement Admin API (CRUD for all entities, import/export)",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 9,
+      "description": "Create homepage with search bar, hot ganzhi cards, quick entry",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 10,
+      "description": "Create Ganzhi detail page with tabs (xiangyi, shensha, xiji, guanxi, compare)",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 11,
+      "description": "Create Nayin专题 page with category nav, detail, status, calculation demo",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 12,
+      "description": "Create Shensha dictionary page with index, search, detail popup",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 13,
+      "description": "Create Guanxi graph page with D3.js/ECharts visualization",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 14,
+      "description": "Create Admin dashboard with data management and import/export",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
+      "completed_at": null
+    },
+    {
+      "id": 15,
+      "description": "Create Docker and docker-compose configuration",
+      "status": "pending",
+      "created_at": "2026-02-13T00:00:00Z",
       "completed_at": null
     }
   ],
   "metadata": {
-    "total": 3,
+    "total": 15,
     "completed": 0,
-    "pending": 3
+    "pending": 15
   }
 }
