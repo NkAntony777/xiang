@@ -76,8 +76,11 @@ echo [INFO]   Log: %LOG_DIR%\loop_%TIMESTAMP%.log
 echo [INFO] ==========================================
 
 REM Get task from tasks.json using Python
+set "TASK_JSON_FILE=%PROJECT_DIR%\data\tasks.json"
+set "TASK_JSON_FILE=%TASK_JSON_FILE:\=\\%"
+
 set "TASK_DESC="
-for /f "delims=" %%i in ('python -c "import json; f=open('%PROJECT_DIR%\data\tasks.json','r',encoding='utf-8'); d=json.load(f); print([t['description'] for t in d['tasks'] if t['status']=='pending'][0] if [t for t in d['tasks'] if t['status']=='pending'] else '')"') do set "TASK_DESC=%%i"
+for /f "delims=" %%i in ('python -c "import json; f=open(r'%TASK_JSON_FILE%','r',encoding='utf-8'); d=json.load(f); print([t['description'] for t in d['tasks'] if t['status']=='pending'][0] if [t for t in d['tasks'] if t['status']=='pending'] else '')"') do set "TASK_DESC=%%i"
 
 if "%TASK_DESC%"=="" (
     echo [WARN] No pending tasks found in data/tasks.json
@@ -92,7 +95,7 @@ echo [INFO] Task: %TASK_DESC%
 
 REM Count pending tasks
 set "PENDING_COUNT=0"
-for /f %%i in ('python -c "import json; f=open('%PROJECT_DIR%\data\tasks.json','r',encoding='utf-8'); d=json.load(f); print(len([t for t in d['tasks'] if t['status']=='pending']))"') do set "PENDING_COUNT=%%i"
+for /f %%i in ('python -c "import json; f=open(r'%TASK_JSON_FILE%','r',encoding='utf-8'); d=json.load(f); print(len([t for t in d['tasks'] if t['status']=='pending']))"') do set "PENDING_COUNT=%%i"
 
 if "%PENDING_COUNT%"=="0" (
     echo [WARN] No more pending tasks!
