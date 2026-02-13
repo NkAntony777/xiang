@@ -143,9 +143,9 @@
     {
       "id": 21,
       "description": "Install Playwright and create test directory structure",
-      "status": "pending",
+      "status": "completed",
       "created_at": "2026-02-13T22:30:00Z",
-      "completed_at": null
+      "completed_at": "2026-02-13T22:45:00Z"
     },
     {
       "id": 22,
@@ -241,7 +241,7 @@
   ],
   "metadata": {
     "total": 34,
-    "completed": 20,
-    "pending": 14
+    "completed": 21,
+    "pending": 13
   }
 }
