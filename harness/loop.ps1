@@ -6,7 +6,8 @@ param(
     [int]$TaskId = 0,
     [string]$CustomPrompt = "",
     [switch]$Verbose = $false,
-    [switch]$DryRun = $false
+    [switch]$DryRun = $false,
+    [int]$Timeout = 30  # 默认30分钟超时，可自定义
 )
 
 $ErrorActionPreference = "Continue"
@@ -62,7 +63,7 @@ function Get-PromptContent {
 
 # Validate count
 if ($Count -le 0) {
-    Write-Host "Usage: .\loop.ps1 <count> [-TaskId N] [-Prompt 'text'] [-Verbose] [-DryRun]"
+    Write-Host "Usage: .\loop.ps1 <count> [-TaskId N] [-Prompt 'text'] [-Verbose] [-DryRun] [-Timeout N]"
     Write-Host ""
     Write-Host "Arguments:"
     Write-Host "  count          Number of iterations to run Claude"
@@ -72,6 +73,7 @@ if ($Count -le 0) {
     Write-Host "  -Prompt P      Custom initial prompt"
     Write-Host "  -Verbose       Enable verbose logging"
     Write-Host "  -DryRun        Show what would run without executing"
+    Write-Host "  -Timeout N     Timeout per iteration in minutes (default: 30)"
     exit 1
 }
 
@@ -171,9 +173,9 @@ for ($i = 1; $i -le $Count; $i++) {
             $fullPrompt | ForEach-Object { $process.StandardInput.WriteLine($_) }
             $process.StandardInput.Close()
 
-            # Read output with timeout
+            # Read output with timeout (configurable, default 30 minutes)
             $output = ""
-            $timeout = 600  # 10 minutes
+            $timeout = $Timeout * 60  # Convert minutes to seconds
             $elapsed = 0
 
             while (-not $process.HasExited -and $elapsed -lt $timeout) {
