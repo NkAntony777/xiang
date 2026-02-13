@@ -43,7 +43,7 @@
       "steps": [
         "by-ganzhi, by-nayin, status, category, calculation endpoints"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "api",
@@ -130,6 +130,6 @@
     "created": "2026-02-13",
     "last_updated": "2026-02-13",
     "total_features": 15,
-    "completed": 4
+    "completed": 5
   }
 }

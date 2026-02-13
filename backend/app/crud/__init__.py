@@ -1,2 +1,2 @@
 # CRUD operations
-from app.crud import ganzhi
+from app.crud import ganzhi, nayin

@@ -4,9 +4,10 @@ from sqlalchemy.orm import sessionmaker
 import os
 
 # Database configuration
+db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "liushijiazi.db")
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "sqlite:///./data/liushijiazi.db"
+    f"sqlite:///{db_path}"
 )
 
 # Ensure data directory exists
