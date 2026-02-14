@@ -75,7 +75,7 @@
       "steps": [
         "Search bar, hot ganzhi cards, quick entry"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "frontend",
@@ -83,7 +83,7 @@
       "steps": [
         "Tabs: xiangyi, shensha, xiji, guanxi, compare"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "frontend",
@@ -91,7 +91,7 @@
       "steps": [
         "Category nav, detail, status, calculation demo"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "frontend",
@@ -99,7 +99,7 @@
       "steps": [
         "Index, search, detail popup"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "frontend",
@@ -107,7 +107,7 @@
       "steps": [
         "D3.js/ECharts visualization"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "frontend",
@@ -115,7 +115,7 @@
       "steps": [
         "Data management and import/export"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "category": "devops",
@@ -123,13 +123,13 @@
       "steps": [
         "Dockerfile and docker-compose.yml"
       ],
-      "passes": false
+      "passes": true
     }
   ],
   "metadata": {
     "created": "2026-02-13",
     "last_updated": "2026-02-13",
     "total_features": 15,
-    "completed": 8
+    "completed": 15
   }
 }
