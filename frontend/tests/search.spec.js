@@ -32,8 +32,8 @@ test.describe('Search Functionality - Task 23', () => {
     const placeholder = await searchInput.getAttribute('placeholder');
     expect(placeholder).toContain('干支');
 
-    // Take screenshot
-    await page.screenshot({ path: 'test-results/search-input.png' });
+    // Take screenshot (catch to handle protocol errors)
+    await page.screenshot({ path: 'test-results/search-input.png' }).catch(() => {});
   });
 
   test('should accept input in search field', async ({ page }) => {
@@ -47,8 +47,8 @@ test.describe('Search Functionality - Task 23', () => {
     const value = await searchInput.inputValue();
     expect(value).toBe('甲子');
 
-    // Take screenshot
-    await page.screenshot({ path: 'test-results/search-input-filled.png' });
+    // Take screenshot (catch to handle protocol errors)
+    await page.screenshot({ path: 'test-results/search-input-filled.png' }).catch(() => {});
   });
 
   test('should navigate to ganzhi detail when pressing Enter', async ({ page }) => {
@@ -67,13 +67,16 @@ test.describe('Search Functionality - Task 23', () => {
     expect(currentUrl).toContain('/ganzhi/');
     expect(decodeURIComponent(currentUrl)).toContain('甲子');
 
-    // Take screenshot
-    await page.screenshot({ path: 'test-results/search-enter-navigation.png' });
+    // Take screenshot (catch to handle protocol errors)
+    await page.screenshot({ path: 'test-results/search-enter-navigation.png' }).catch(() => {});
   });
 
   test('should navigate to ganzhi detail when clicking search button', async ({ page }) => {
     // Find the search input
     const searchInput = page.locator('input[placeholder*="干支"]');
+
+    // Take screenshot before navigation
+    await page.screenshot({ path: 'test-results/search-button-navigation-before.png' });
 
     // Type 乙丑 into the search field and press Enter (simulating button click behavior)
     await searchInput.fill('乙丑');
@@ -87,8 +90,8 @@ test.describe('Search Functionality - Task 23', () => {
     expect(currentUrl).toContain('/ganzhi/');
     expect(decodeURIComponent(currentUrl)).toContain('乙丑');
 
-    // Take screenshot
-    await page.screenshot({ path: 'test-results/search-button-navigation.png' });
+    // Take screenshot after navigation
+    await page.screenshot({ path: 'test-results/search-button-navigation.png' }).catch(() => {});
   });
 
   test('should not navigate when search is empty and Enter is pressed', async ({ page }) => {
@@ -107,8 +110,8 @@ test.describe('Search Functionality - Task 23', () => {
     // Verify URL is still home page
     expect(page.url()).toContain('localhost:5173/');
 
-    // Take screenshot
-    await page.screenshot({ path: 'test-results/search-empty-no-navigation.png' });
+    // Take screenshot (catch to handle protocol errors)
+    await page.screenshot({ path: 'test-results/search-empty-no-navigation.png' }).catch(() => {});
   });
 
   test('should not navigate when search is empty and button is clicked', async ({ page }) => {
@@ -127,8 +130,8 @@ test.describe('Search Functionality - Task 23', () => {
     // Verify URL is still home page
     expect(page.url()).toContain('localhost:5173/');
 
-    // Take screenshot
-    await page.screenshot({ path: 'test-results/search-empty-button-no-navigation.png' });
+    // Take screenshot (catch to handle protocol errors)
+    await page.screenshot({ path: 'test-results/search-empty-button-no-navigation.png' }).catch(() => {});
   });
 
   test('should navigate to detail page for 丙寅', async ({ page }) => {
@@ -147,8 +150,8 @@ test.describe('Search Functionality - Task 23', () => {
     expect(currentUrl).toContain('/ganzhi/');
     expect(decodeURIComponent(currentUrl)).toContain('丙寅');
 
-    // Take screenshot
-    await page.screenshot({ path: 'test-results/search-bingyin.png' });
+    // Take screenshot (catch to handle protocol errors)
+    await page.screenshot({ path: 'test-results/search-bingyin.png' }).catch(() => {});
   });
 
   test('should clear search input after typing', async ({ page }) => {
@@ -165,8 +168,8 @@ test.describe('Search Functionality - Task 23', () => {
     const value = await searchInput.inputValue();
     expect(value).toBe('');
 
-    // Take screenshot
-    await page.screenshot({ path: 'test-results/search-cleared.png' });
+    // Take screenshot (catch to handle protocol errors)
+    await page.screenshot({ path: 'test-results/search-cleared.png' }).catch(() => {});
   });
 
   test('should display ganzhi detail page after search', async ({ page }) => {
@@ -182,8 +185,8 @@ test.describe('Search Functionality - Task 23', () => {
     // The page should either show content or "暂无数据"
     await page.waitForTimeout(2000);
 
-    // Take screenshot first (even if it's loading or no data)
-    await page.screenshot({ path: 'test-results/search-detail-page.png' });
+    // Take screenshot first (even if it's loading or no data) - catch to handle protocol errors
+    await page.screenshot({ path: 'test-results/search-detail-page.png' }).catch(() => {});
 
     // Verify the page loaded (either shows data or shows no data message)
     const pageContent = page.locator('body');

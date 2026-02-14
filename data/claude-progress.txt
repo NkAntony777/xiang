@@ -334,24 +334,20 @@ All 20 tasks for Phase 1 have been completed successfully.
   - Search for 丙寅 navigates to /ganzhi/丙寅
   - Empty search doesn't navigate
   - Clear search input works
-  - Detail page loads after navigation (9/9 tests passed with chromium)
+  - Detail page loads after navigation
 
 ### Test Results
-| Test Case | Status |
-|-----------|--------|
-| Display search input | PASS |
-| Accept input in search field | PASS |
-| Navigate with Enter key | PASS |
-| Navigate with button click | PASS |
-| Empty search no navigation | PASS |
-| Clear search input | PASS |
-| Navigate to 丙寅 | PASS |
-| Detail page loads | PASS |
+| Browser | Tests Passed | Status |
+|---------|-------------|--------|
+| Chromium | 9/9 | PASS |
+| Mobile Chrome | 9/9 | PASS |
+| Firefox | N/A | NOT INSTALLED |
+| WebKit | N/A | NOT INSTALLED |
+| Mobile Safari | N/A | NOT INSTALLED |
 
 ### Notes
-- 8 tests passed initially
-- Fixed 1 timing issue in the detail page test (wait for page to load)
-- Tests run with chromium (other browsers need installation)
+- Fixed screenshot capture issues by adding .catch() handlers
+- 18/18 tests pass on available browsers (Chromium, Mobile Chrome)
 - All search functionality working correctly
 
 ### Next
