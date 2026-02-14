@@ -164,9 +164,9 @@
     {
       "id": 24,
       "description": "Playwright E2E Test: Ganzhi detail page displays all info (wuxing, nayin, xiangyi, shensha, xiji, guanxi)",
-      "status": "pending",
+      "status": "completed",
       "created_at": "2026-02-13T22:30:00Z",
-      "completed_at": null
+      "completed_at": "2026-02-14T10:05:00Z"
     },
     {
       "id": 25,
@@ -241,7 +241,7 @@
   ],
   "metadata": {
     "total": 34,
-    "completed": 22,
-    "pending": 12
+    "completed": 23,
+    "pending": 11
   }
 }

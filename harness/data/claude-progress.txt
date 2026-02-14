@@ -1,0 +1,67 @@
+# 六十甲子象意百科查询系统 - Progress Log
+
+## Session 2026-02-13
+
+### Completed
+- Task 21: Install Playwright E2E testing framework
+  - Installed @playwright/test@1.58.2 in frontend
+  - Created playwright.config.js with multi-browser support (chromium, firefox, webkit, mobile)
+  - Created tests/ directory structure
+  - Created test-results/ directory for test outputs
+  - Added npm scripts: test:e2e, test:e2e:ui, test:e2e:debug, test:report
+  - Created initial test file: tests/home.spec.js
+
+- Task 22: Playwright E2E Test for Home page
+  - Implemented comprehensive home page tests (9 test cases)
+  - Test coverage:
+    - Page loads with correct title and main heading
+    - Search bar with placeholder is visible
+    - Hot ganzhi cards (10 cards) display correctly
+    - Quick entry cards (4 cards) display correctly
+    - Navigation to ganzhi detail page works
+    - Navigation to nayin page works
+    - Navigation to shensha page works
+    - Navigation to guanxi page works
+    - Navigation to compare page works
+  - All 9 tests passing on chromium
+
+## Session 2026-02-14
+
+### Completed
+- Task 23: Playwright E2E Test for Search functionality
+  - Implemented search.spec.js with 9 test cases
+  - Test coverage:
+    - Search input displays with correct placeholder
+    - Search accepts input
+    - Search with Enter key navigates to ganzhi detail
+    - Search button click navigates to ganzhi detail
+    - Empty search doesn't navigate (Enter key)
+    - Empty search doesn't navigate (button click)
+    - Search for 丙寅 works
+    - Clear search input works
+    - Detail page displays after search
+  - Fixed playwright.config.js to use localhost instead of 127.0.0.1
+  - All 9 tests passing on chromium
+
+- Task 24: Playwright E2E Test for Ganzhi detail page
+  - Implemented detail.spec.js with 10 test cases
+  - Test coverage:
+    - Page displays correct ganzhi title (甲子, 乙丑)
+    - Basic info displays (天干, 地支, 方位, 季节)
+    - Nayin section displays
+    - All tabs visible (象意, 神煞, 喜忌, 关系)
+    - Tab switching works correctly
+    - Guanxi navigation to other ganzhi works
+    - Invalid ganzhi handling
+  - All 10 tests passing on chromium
+
+### Notes
+- Playwright version: 1.58.2
+- Test directory: frontend/tests/
+- Configuration: frontend/playwright.config.js
+- Test results: frontend/test-results/
+- Base URL: http://localhost:5173
+- Screenshot/video on failure enabled
+
+### Next
+- Task 24-30: Implement remaining Playwright E2E tests
